@@ -1,3 +1,8 @@
+:root {
+  --main-color: #282c34;
+  --second-color: #282828;
+}
+
 .App {
   text-align: center;
 }
@@ -9,8 +14,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: var(--main-color);
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,4 +35,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  display: flex;
+}
+
+.Menu {
+  background-color: red;
+  flex: 1 1 auto;
+}
+
+.Map {
+  background-color: var(--second-color);
+  flex: 4 1 auto;
 }
