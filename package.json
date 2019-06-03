@@ -2,7 +2,7 @@
   "name": "satisfactory-map",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Tarrke/satisfactory-map",
+  "homepage": "https://tarrke.github.io/satisfactory-map/",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",
