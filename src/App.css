@@ -48,5 +48,8 @@
 
 .Map {
   background-color: var(--second-color);
+  background-image: url('./images/map-back.png');
+  background-size: contain;
   flex: 4 1 auto;
+  height: 90vh;
 }
