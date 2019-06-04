@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { type } from 'os';
 
 export default class MyMenu extends Component {
 
     constructor(props) {
         super(props);
-        
         this.handleFilterChange = this.handleFilterChange.bind(this);
     }
 
