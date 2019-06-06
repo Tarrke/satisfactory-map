@@ -6,9 +6,12 @@
   "dependencies": {
     "gh-pages": "^2.0.1",
     "leaflet": "^1.5.1",
+    "leaflet.markercluster": "^1.4.1",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-leaflet": "^2.3.0",
+    "react-leaflet-markercluster": "^1.1.8",
     "react-scripts": "3.0.1"
   },
   "scripts": {

@@ -1,6 +1,8 @@
 :root {
   --main-color: #282c34;
   --second-color: #282828;
+  --map-background: #494947;
+  --map-background: green;
 }
 
 .App {
@@ -43,15 +45,16 @@
 
 .Menu {
   background-color: red;
-  flex: 1 1 auto;
+  /*flex: 1 1 auto;*/
+  width: 250px;
 }
 
 .Map {
-  background-color: var(--second-color);
   flex: 4 1 auto;
   height: 90vh;
 }
 
 .leaflet-container {
   height: 100%;
+  background-color: var(--map-background);
 }

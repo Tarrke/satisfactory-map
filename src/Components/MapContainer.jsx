@@ -20,7 +20,7 @@ export default class MapContainer extends Component {
 
     getInitialState() {
         return {
-            listItems: ['iron_1', 'iron_2', 'iron_3'],
+            listItems: ['iron_1', 'iron_2', 'iron_3', 'drop_pods'],
             activeFilter: ['iron_1']
         }
     }

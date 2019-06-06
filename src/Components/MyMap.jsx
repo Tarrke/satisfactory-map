@@ -1,32 +1,57 @@
 import React, { Component } from 'react';
 
-import { Map, Marker, Popup, TileLayer, ZoomControl } from 'react-leaflet'
+import { Map, TileLayer } from 'react-leaflet';
+import * as L from 'leaflet';
 
-import * as DropPods from '../data/d_droppod'
+import dropPods from '../data/d_droppod'
+
+import DropPodGroup from './MapComponents/DropPodGroup';
 
 export default class MyMap extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            zoom: 5,
+            zoom: 3,
         };
-        const bounds= [[19,17],[-19,-17]]
+
+        this.bounds = [[-406400, -406400], [508000, 508000]];
+
+        this.handleMapClick = this.handleMapClick.bind(this);
+        this.handleZoomChange = this.handleZoomChange.bind(this);
     }
 
     componentDidMount() {
         let mapInst = this.refs.map.leafletElement;
-        console.log( mapInst.getBounds() );
+        console.log(mapInst.getBounds());
+    }
+
+    handleMapClick(event) {
+        console.log(event.latlng);
+    }
+
+    handleZoomChange(event) {
+        // console.log(event.target._zoom);
+        this.setState({ zoom: event.target._zoom });
+    }
+
+    createMarkerIcon(iconSize, mode) {
+
     }
 
     render() {
         var content = "Default";
+        let pDropPods = [];
         if (this.props.items.length > 0) {
-            var items = this.props.items.map((item) => {
-                return <li key={item}>{item}</li>;
-            });
-            content = <ul>{items}</ul>;
+            if( this.props.items.indexOf( "drop_pods" ) !== -1 ) {
+                pDropPods = dropPods;
+            }
         }
-        let position = [0, 0];
+        let position = [33.8, -102];
+
+        const crs = L.extend({}, L.CRS.Simple, {
+            transformation: new L.Transformation(0.00015625, 63.5, 0.00015625, 63.5)
+        });
+
         return (
             <div className="Map">
                 <Map ref='map'
@@ -34,19 +59,21 @@ export default class MyMap extends Component {
                     zoomSnap={0.5}
                     maxZoom={7}
                     minZoom={3}
-                    maxBounds={[[-406400, -406400], [508000, 508000]]}
+                    maxBounds={this.bounds}
                     zoom={this.state.zoom}
+                    onClick={this.handleMapClick}
+                    onZoomEnd={this.handleZoomChange}
+                    crs={crs}
                 >
-                    
+
                     <TileLayer
-                        attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                        attribution=''
                         url="/tiles/{z}/{x}/{y}.png"
-                        bounds={this.bounds}
+                        bounds={[[-406400, -406400], [508000, 508000]]}
                         noWrap={true}
                     />
-                    
+                    <DropPodGroup markers={pDropPods} />
                 </Map>
-                {content}
             </div>
         );
     }
