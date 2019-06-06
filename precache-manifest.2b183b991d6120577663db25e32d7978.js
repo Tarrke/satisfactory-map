@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e36a8df4bccb3e4fa7663133a25ad1fd",
+    "revision": "de7624f1feb5d49a4ee77dd00871f099",
     "url": "/satisfactory-map/index.html"
   },
   {
-    "revision": "1814b1c04489d9af8ed0",
+    "revision": "b0c9007ccbadcbc2d83c",
     "url": "/satisfactory-map/static/css/main.a1e38ac4.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/satisfactory-map/static/js/2.be20d598.chunk.js"
   },
   {
-    "revision": "1814b1c04489d9af8ed0",
-    "url": "/satisfactory-map/static/js/main.a397c061.chunk.js"
+    "revision": "b0c9007ccbadcbc2d83c",
+    "url": "/satisfactory-map/static/js/main.f0350450.chunk.js"
   },
   {
     "revision": "0245de344ec4b4809705",
