@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { Map, TileLayer } from 'react-leaflet';
 import * as L from 'leaflet';
 
-import dropPods from '../data/d_droppod'
+import dDropPods from '../data/d_droppod'
+import dNodes from '../data/d_nodes'
 
 import DropPodGroup from './MapComponents/DropPodGroup';
 
@@ -30,22 +31,10 @@ export default class MyMap extends Component {
     }
 
     handleZoomChange(event) {
-        // console.log(event.target._zoom);
         this.setState({ zoom: event.target._zoom });
     }
 
-    createMarkerIcon(iconSize, mode) {
-
-    }
-
     render() {
-        var content = "Default";
-        let pDropPods = [];
-        if (this.props.items.length > 0) {
-            if( this.props.items.indexOf( "drop_pods" ) !== -1 ) {
-                pDropPods = dropPods;
-            }
-        }
         let position = [33.8, -102];
 
         const crs = L.extend({}, L.CRS.Simple, {
@@ -68,11 +57,11 @@ export default class MyMap extends Component {
 
                     <TileLayer
                         attribution=''
-                        url="/tiles/{z}/{x}/{y}.png"
+                        url="./tiles/{z}/{x}/{y}.png"
                         bounds={[[-406400, -406400], [508000, 508000]]}
                         noWrap={true}
                     />
-                    <DropPodGroup markers={pDropPods} />
+                    <DropPodGroup markers={this.props.items.drop_pods} />
                 </Map>
             </div>
         );
