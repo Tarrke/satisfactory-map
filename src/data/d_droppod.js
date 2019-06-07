@@ -1,3 +1,5 @@
+// Drop Pods data from the game
+
 export default [
   {
     x: 87739.6796875,
